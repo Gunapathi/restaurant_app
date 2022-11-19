@@ -13,4 +13,5 @@ Firebase, Framer motions for animations, React Icons, React Router DOM
 # src
 
 tailwind config file -> https://gist.github.com/Vetrivel-VP/dbbc3bc3c723a745ef87f4b290fe8466
+
 images -> https://drive.google.com/drive/folders/1UgiyPOZLfrP2GR8OmB8NAszffMKAO8ZN

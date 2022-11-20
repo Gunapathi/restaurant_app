@@ -6,6 +6,9 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { StatePorvider } from './context/StateProvider';
+import { initialState } from './context/initialState';
+import reducer from './context/reducer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 // root.render(
@@ -16,7 +19,10 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <Router>
-    <App />
+    {/* updated the value of initialstate and calls reducer function to update the user data on global components */}
+    <StatePorvider initialState={initialState} reducer={reducer}>
+      <App />
+    </StatePorvider>
   </Router>
 )
 

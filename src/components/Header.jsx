@@ -119,11 +119,15 @@ const Header = () => {
 										user.email ===
 											"gunapathi.selvam@gmail.com" && (
 											<Link to={"/createItem"}>
+<<<<<<< HEAD
 												<p
 													className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-textColor text-base"
 													onClick={() =>
 														setIsMenu(false)
 													}>
+=======
+												<p className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-textColor text-base">
+>>>>>>> 5fc4d70c1d1c6bcb838378f821be7a6a60d056b1
 													New Item <MdAdd />
 												</p>
 											</Link>
@@ -184,11 +188,15 @@ const Header = () => {
 									user.email ===
 										"gunapathi.selvam@gmail.com" && (
 										<Link to={"/createItem"}>
+<<<<<<< HEAD
 											<p
 												className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-textColor text-base"
 												onClick={() =>
 													setIsMenu(false)
 												}>
+=======
+											<p className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-textColor text-base">
+>>>>>>> 5fc4d70c1d1c6bcb838378f821be7a6a60d056b1
 												New Item <MdAdd />
 											</p>
 										</Link>

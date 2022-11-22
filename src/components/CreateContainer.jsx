@@ -1,6 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { MdFastfood } from "react-icons/md";
+import {
+	MdCloudUpload,
+	MdFastfood,
+	MdDelete,
+	MdFoodBank,
+	MdAttachMoney,
+} from "react-icons/md";
 import { useState } from "react";
 import { categories } from "../utils/data";
 import Loader from "./Loader";
@@ -14,8 +20,12 @@ const CreateContainer = () => {
 	const [fields, setFields] = useState(false);
 	const [alertStatus, setAlertStatus] = useState("danger");
 	const [msg, setMsg] = useState(null);
-	const [isLoading, setIsLoading] = useState(true);
+	const [isLoading, setIsLoading] = useState(false);
 	// const [{ foodItems }, dispatch] = useStateValue();
+
+	const uploadImage = () => {};
+	const deleteImage = () => {};
+	const saveDetails = () => {};
 
 	return (
 		<div className="w-full h-auto min-h-screen flex justify-center items-center">
@@ -37,7 +47,7 @@ const CreateContainer = () => {
 				<div className="w-full py-2 border-b border-gray-300 flex items-center gap-2">
 					<MdFastfood className="text-xl text-gray-700" />
 					<input
-						className="w-full h-full text-lg bg-transparent font-semibold outline-none border-none placeholder:text-gray-400 text-textColor"
+						className="w-full h-full text-lg bg-transparent outline-none border-none placeholder:text-gray-400 text-textColor"
 						onChange={(e) => setTitle(e.target.value)}
 						type="text"
 						required
@@ -68,7 +78,82 @@ const CreateContainer = () => {
 				</div>
 
 				<div className="w-full group flex justify-center items-center felx-col border-2 border-dotted border-gray-300 h-225 md:h-420 cursor-pointer rounded-lg">
-					{isLoading ? <Loader /> : <></>}
+					{isLoading ? (
+						<Loader />
+					) : (
+						<>
+							{!imageAsset ? (
+								<>
+									<label className="w-full h-full flex flex-col items-center justify-center cursor-pointer">
+										<div className="w-full h-full flex flex-col items-center justify-center cursor-pointer gap-2">
+											<MdCloudUpload className="text-gray-500 text-3xl hover:text-gray-700" />
+											<p className="text-gray-500 hover:text-gray-700">
+												Click here to upload
+											</p>
+										</div>
+										<input
+											type="file"
+											name="uploadImage"
+											accept="image/*"
+											onChange={uploadImage}
+											className="w-0 h-0"
+										/>
+									</label>
+								</>
+							) : (
+								<>
+									<div className="relative h-full">
+										<img
+											src={imageAsset}
+											alt="Uploaded Image"
+											className="w-full h-full object-cover"
+										/>
+										<button
+											type="button"
+											className="absolute bottom-3 right-3 p-3 rounded-full bg-red-500 text-xl cursor-pointer outline-none hover:shadow-md duration-500 transition-all ease-in-out"
+											onClick={deleteImage}>
+											<MdDelete className="text-white" />
+										</button>
+									</div>
+								</>
+							)}
+						</>
+					)}
+				</div>
+
+				<div className="w-full flex flex-col md:flex-row items-center gap-3">
+					<div className="w-full py-2 border-b border-gray-300 flex items-center gap-2">
+						<MdFoodBank className="text-gray-700 text-2xl" />
+						<input
+							className="w-full h-full text-lg bg-transparent outline-none border-none placeholder:text-gray-400 text-textColor"
+							type="text"
+							value={calories}
+							onChange={(e) => setCalories(e.target.value)}
+							required
+							placeholder="Calories"
+						/>
+					</div>
+
+					<div className="w-full py-2 border-b border-gray-300 flex items-center gap-2">
+						<MdAttachMoney className="text-gray-700 text-2xl" />
+						<input
+							className="w-full h-full text-lg bg-transparent outline-none border-none placeholder:text-gray-400 text-textColor"
+							type="text"
+							value={price}
+							onChange={(e) => setCalories(e.target.value)}
+							required
+							placeholder="Price"
+						/>
+					</div>
+				</div>
+
+				<div className="flex items-center w-full">
+					<button
+						className="ml-0 md:ml-auto w-full md:w-auto border-none outline-none bg-emerald-500 px-12 py-2 rounded-lg text-lg text-white font-semibold"
+						onClick={saveDetails}
+						type="button">
+						Save
+					</button>
 				</div>
 			</div>
 		</div>

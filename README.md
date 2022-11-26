@@ -20,3 +20,7 @@ React: React Router DOM, Context
 Database: Firebase, Live DB, Authentication
 Animation: Framer
 Icons: React Icons
+
+# Image Upload
+
+Uploading Image file on firebase using Images/{date}-{file name format} for reference

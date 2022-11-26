@@ -20,6 +20,7 @@ React: React Router DOM, Context
 Database: Firebase, Live DB, Authentication
 Animation: Framer
 Icons: React Icons
+Tailwnd scrollbar:
 
 # Image Upload
 

@@ -31,8 +31,7 @@ const CreateContainer = () => {
 	const [alertStatus, setAlertStatus] = useState("danger");
 	const [msg, setMsg] = useState(null);
 	const [isLoading, setIsLoading] = useState(false);
-	// const [{ foodItems }, dispatch] = useStateValue();
-	const [{}, dispatch] = useStateValue();
+	const [{ foodItems }, dispatch] = useStateValue();
 
 	const uploadImage = (e) => {
 		setIsLoading(true);
@@ -231,7 +230,7 @@ const CreateContainer = () => {
 									<div className="relative h-full">
 										<img
 											src={imageAsset}
-											alt="Uploaded Image"
+											alt=""
 											className="w-full h-full object-cover"
 										/>
 										<button

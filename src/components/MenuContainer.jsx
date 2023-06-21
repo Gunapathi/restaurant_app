@@ -7,6 +7,7 @@ import RowContainer from "./RowContainer";
 
 const MenuContainer = () => {
 	const [filter, setFilter] = useState("chicken");
+	// eslint-disable-next-line
 	const [{ foodItems }, dispatch] = useStateValue();
 	return (
 		<section

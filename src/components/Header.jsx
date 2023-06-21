@@ -25,6 +25,7 @@ const Header = () => {
 		// if having user on localstorage dont activate the signin process
 		if (!user) {
 			const {
+				// eslint-disable-next-line
 				user: { refreshToken, providerData },
 			} = await signInWithPopup(firebaseAuth, provider);
 

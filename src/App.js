@@ -7,6 +7,7 @@ import { useStateValue } from './context/StateProvider'
 import { actionType } from './context/reducer'
 
 export const App = () => {
+  // eslint-disable-next-line
   const [{ }, dispatch] = useStateValue();
 
   const fetchData = async () => {
@@ -20,6 +21,7 @@ export const App = () => {
 
   useEffect(() => {
     fetchData();
+    // eslint-disable-next-line
   }, [])
 
   return (

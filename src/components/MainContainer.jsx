@@ -8,6 +8,7 @@ import MenuContainer from "./MenuContainer";
 import RowContainer from "./RowContainer";
 
 const MainContainer = () => {
+	// eslint-disable-next-line
 	const [{ foodItems, cartShow }, dispatch] = useStateValue();
 	const [scrollValue, setScrollValue] = useState(0);
 

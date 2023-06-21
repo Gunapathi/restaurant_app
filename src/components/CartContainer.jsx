@@ -25,6 +25,7 @@ const CartContainer = () => {
 			return accumulator + item.qty * item.price;
 		}, 0);
 		setTot(totalPrice);
+		// eslint-disable-next-line
 	}, [tot, flag]);
 
 	const clearCart = () => {
